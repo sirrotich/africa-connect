@@ -12,21 +12,24 @@
 <div class="card my-4">
         <h5 class="card-header">Recent Blog</h5>
     <div class="card-body">
+
         {% for blog in blog_list %}
-        <div class="card mb-4">
-          <div class="card-body">
-            <h2 class="card-title">{{ blog.title }}</h2>
-            <img style="width: 100px; height: 100px;" src="{{blog.blog_image.url}}" alt="Image">
-            <p class="card-text text-muted h6">{{ blog.author }} | {{ blog.created_on}} </p>
-            <p>{{ blog.created_on }}</p>
-            <p class="card-text">{{blog.content|slice:":100" }}</p>
-          
+        <div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="sm:flex sm:items-center px-6 py-4">
+              <img class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-16 sm:h-24 rounded-full" src="{{blog.blog_image.url}}" alt="Woman's Face" style="height: 100px; width: 100px;">
+              <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+                <p class="text-xl leading-tight">{{blog.title}}</p>
+                <p class="text-sm leading-tight text-gray-600">{{blog.content |slice:":20"}}</p>
+                <div class="mt-4">
+                </div>
+              </div>
+            </div>
           </div>
-  
-        </div>
+          <br>
         {% endfor %}
     </div>
 </div>
+
 </div>
 
 {% endblock sidebar %}

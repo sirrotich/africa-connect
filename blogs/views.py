@@ -31,3 +31,5 @@ class MerchList(APIView):
 #     model = Blog
 #     template_name = 'blog_detail.html'
 
+
+   

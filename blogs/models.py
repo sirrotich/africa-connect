@@ -39,7 +39,6 @@ class Blog(models.Model):
     blog_image = models.ImageField(upload_to = 'blog/')
     
 
-
     class Meta:
         ordering = ['-created_on']
 

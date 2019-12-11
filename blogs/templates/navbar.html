@@ -1,10 +1,11 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Caveat|Gochi+Hand|Rock+Salt&display=swap" rel="stylesheet">
 <!------ Include the above in your HEAD tag ---------->
 
 	<header>
-			<div id="navbar" class="container-fluid">
+			<div id="navbar" class="container-fluid" style="height: 100px;">
 				<div class="container nav-fill w-100">
 					<nav class="navbar navbar-expand-md navbar-light" role="navigation">
 						<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,58 +14,9 @@
 						<div class="collapse navbar-collapse" id="navbarContent" style='color: aliceblue;'>
 							<ul class="navbar-nav nav-fill w-100">
 								<li class="nav-item">
-									<a href="/home.html" role="button" style='color: aliceblue;' class="btn btn-default">Home</a>
+									<a href="{% url 'home' %}" role="button" style='color: aliceblue; font-size:50px; font-family: Gochi Hand ,cursive'>DELTA NEWS</a>
 								</li>
-								<li class="nav-item">
-									<div class="btn-group">
-									  <a href="/brand.html" role="button" style='color: aliceblue;' class="btn btn-default">Technology</a>
-									  <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									    <span class="sr-only">Categories</span>
-									  </button>
-									  <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">AI</a>
-                                            <a class="dropdown-item" href="#">Big Data</a>
-                                            <a class="dropdown-item" href="#">Machine learning</a>
-                                            <a class="dropdown-item" href="#">Programming</a>
-									  </div>
-									</div>
-								</li>
-								<li class="nav-item">
-									<div class="btn-group">
-									  <a href="/accessories.html" role="button"  style='color: aliceblue;' class="btn btn-default">Business</a>
-									  <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									    <span class="sr-only">Categories</span>
-									  </button>
-									  <div class="dropdown-menu">
-											<a class="dropdown-item" href="#">Breaking news</a>
-											<a class="dropdown-item" href="#">Real estate</a>
-											<a class="dropdown-item" href="#">Transportation</a>
-											<a class="dropdown-item" href="#">Media</a>
-									  </div>
-									</div>
-								</li>
-								<li class="nav-item">
-									<div class="btn-group">
-									  <a href="/apparel.html" role="button"  style='color: aliceblue;' class="btn btn-default">Model</a>
-									  <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									    <span class="sr-only">Toggle Dropdown</span>
-									  </button>
-									  <div class="dropdown-menu">
-											<a class="dropdown-item" href="#">Item</a>
-									  </div>
-									</div>
-								</li>
-								<li class="nav-item">
-									<div class="btn-group">
-									  <a href="/clearance.html" role="button" style='color: aliceblue;'  class="btn btn-default">Clearance</a>
-									  <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									    <span class="sr-only">Toggle Dropdown</span>
-									  </button>
-									  <div class="dropdown-menu">
-											<a class="dropdown-item" href="#">Item</a>
-									  </div>
-									</div>
-								</li>
+								
 							</ul>
 						</div>
 					</nav>

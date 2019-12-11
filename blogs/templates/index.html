@@ -1,59 +1,45 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
 {% block content %}
-<style>
-  body {
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
-    background-color: #fdfdfd;
-  }
-
-  .head_text {
-    color: white;
-  }
-
-  .card {
-    box-shadow: 0 16px 48px #E3E7EB;
-  }
-</style>
-
-<header class="masthead">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class=" col-md-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
-          <p class="text-light">We Love Django As much as you do..! &nbsp
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</header>
-
 <div class="container">
-  
   <div class="row">
     
-    <!-- Blog Entries Column -->
-    <div class="col-md-8 mt-3 left">
-        {% for blog in blog_list %}
-        <div class="card mb-4">
-          <div class="card-body">
-            <h2 class="card-title">{{ blog.title }}</h2>
-            <img style="width: 400px; height: 250px;" src="{{blog.blog_image.url}}" alt="Image">
-            <p class="card-text text-muted h6">{{ blog.author }} | {{ blog.created_on}} </p>
-            <p>{{ blog.created_on }}</p>
-            <p class="card-text">{{blog.content|slice:":200" }}</p>
-          
-          </div>
-  
-        </div>
-        {% endfor %}
+    <div class="col-md-7">
+      <br>
+     
+      {% for blog in blog_list%}
+
+      <div class="max-w-sm w-full lg:max-w-full lg:flex">
         
-      </div>
+          <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url({{blog.blog_image.url}})" title="Woman holding a mug">
+            
+          </div>
+
+          <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div class="mb-5">
+              <p class="text-sm text-gray-600 flex items-center uppercase" style="color:rgb(247, 92, 92)">
+                <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+                </svg>
+                {{ blog.category}}
+              </p>
+              
+              <div class="text-gray-900 font-bold text-xl mb-2" style="font-family: Courgette, cursive;">{{blog.title}}</div>
+              <p class="text-gray-700 text-base">{{blog.content |slice:":100"}}</p>
+              
+            </div>
+            <div class="flex items-center">
+              <img class="w-10 h-10 rounded-full mr-4" src="{{blog.blog_image.url}}" alt="Avatar of Jonathan Reinink">
+              <div class="text-sm">
+                <p class="text-gray-900 leading-none">{{ blog.author}}</p>
+                <p class="text-gray-600">{{ blog.created_on}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      {% endfor%}
+    
+    </div>
     {% block sidebar %}
     {% include 'sidebar.html' %}
     {% endblock sidebar %}
@@ -71,6 +57,7 @@
   {% endif %}
 </ul>
 </nav>
-</div>
 {% endif %}
-{%endblock%}
+    {% endblock %}
+
+
